@@ -1,0 +1,64 @@
+#+title: CRUD on Go
+
+This project is based on a =FreeBootCamp= course on Go.
+
+* Table of Contents :TOC:
+- [[#run-the-project][Run the project]]
+  - [[#requirements][Requirements]]
+  - [[#dependencies-handling][Dependencies Handling]]
+  - [[#start-the-server][Start the server]]
+  - [[#use-postman-or-alike-to-test-apis][Use Postman or alike to test APIs]]
+
+* Run the project
+** Requirements
+- Golang installed.
+- Install project's dependencies.
+- Run server on Postman or alike.
+- Server is run on =localhost:9010=, by default.
+** Dependencies Handling
+At the project's root path, install the dependencies by:
+#+begin_src shell
+go tidy
+#+end_src
+
+** Start the server
+Go to =cmd/main=,
+#+begin_src shell
+cd cmd/main
+#+end_src
+
+Run the =main.go= file,
+#+begin_src shell
+go run main.go
+#+end_src
+
+** Use Postman or alike to test APIs
+*** Table describing APIS
+|----------------+--------------+--------|
+| API            | Route-Method | Action |
+|----------------+--------------+--------|
+| /book          | GetBook      | GET    |
+| /book/{bookId} | GetBookById  | GET    |
+| /book          | CreateBook   | POST   |
+| /book/{bookId} | UpdateBook   | PUT    |
+| /book/{bookId} | DeleteBook   | DELETE |
+|----------------+--------------+--------|
+
+*** Examples
+=/book= using =POST=, request body:
+#+begin_src javascript
+{
+    "Name": "O Idiota",
+    "Author": "Dostoievsky",
+    "Publication": "Martin Claret"
+}
+#+end_src
+
+=/book/{bookID}= using =PUT=, request body:
+#+begin_src javascript
+{
+    "name": "Fausto",
+    "author": "Goethe",
+    "publication": "Martin Claret"
+}
+#+end_src

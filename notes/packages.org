@@ -1,0 +1,15 @@
+#+title: Packages
+
+* Initialize project
+#+begin_src shell
+go mod init github.com/BuddhiLW/bookmanagment
+#+end_src
+
+* Download packages
+After initilizing the project, all the packages we install can be directly used in our code-files.
+
+#+begin_src shell
+go install "github.com/gorilla/mux@latest"
+go install "github.com/jinzhu/gorm@latest"
+go install "github.com/jinzhu/gorm/dialects/mysql@latest"
+#+end_src
